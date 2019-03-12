@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["SignalType","Represents the different types of signals a process can receive."]],"struct":[["DefaultSignalsHandler","Default signals handler."],["ProcessSignals","An actor that handles Unix signals."],["Signal","A message representing a received signal."],["Subscribe","Subscribe to process signals."]]});
