@@ -30,19 +30,21 @@
 
 [workspace]
 
-	members = ["examples/chat"]
+	members = ["examples/chat", "examples/wasm"]
 
 
 [features]
 
-	wasm  = [ "actix-rt/wasm" ]
+	tokio   = [ "actix-rt/tokio" ]
+	wasm    = [ "actix-rt/wasm"  ]
 
 	# Adds assertion to prevent processing too many messages on event loop
 	mailbox_assert = []
 
 [dependencies]
 
-	actix-rt          = { path = "../actix-net/actix-rt" }
+	# actix-rt          = { path = "../actix-net/actix-rt", default-features = false }
+	actix-rt          = { git = "https://github.com/najamelan/actix-net", branch =  "feature/wasm-runtime", default-features = false }
 
 	actix_derive      = "0.4"
 	bytes             = "0.4"
