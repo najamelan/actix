@@ -35,12 +35,15 @@
 
 [features]
 
+	wasm  = [ "actix-rt/wasm" ]
+
 	# Adds assertion to prevent processing too many messages on event loop
 	mailbox_assert = []
 
 [dependencies]
 
-	actix-rt          = "0.2.1"
+	actix-rt          = { path = "../actix-net/actix-rt" }
+
 	actix_derive      = "0.4"
 	bytes             = "0.4"
 	crossbeam-channel = "0.3"
