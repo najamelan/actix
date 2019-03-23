@@ -16,7 +16,7 @@ So if you need to see it for yourself in order to believe it:
 ```shell
 git clone --branch wasm-runtime  https://github.com/najamelan/actix
 cd actix/examples/wasm
-wasm-pack build --target no-modules
+wasm-pack build --target web
 ```
 If all goes well you should see the last line of the output as:
 ```

@@ -59,7 +59,6 @@
 	parking_lot       = "0.7"
 	tokio-timer       = "0.2.8"
 
-
 [profile.release]
 
 	lto           = true
