@@ -1,62 +1,65 @@
 [package]
-name = "actix"
-version = "0.8.0"
-authors = ["Nikolay Kim <fafhrd91@gmail.com>"]
-description = "Actor framework for Rust"
-readme = "README.md"
-keywords = ["actor", "futures", "actix", "async", "tokio"]
-homepage = "https://actix.rs"
-repository = "https://github.com/actix/actix.git"
-documentation = "https://docs.rs/actix/"
-categories = ["network-programming", "asynchronous"]
-license = "MIT/Apache-2.0"
-exclude = [".gitignore", ".travis.yml", ".cargo/config", "appveyor.yml"]
-edition = "2018"
+
+	name          = "actix"
+	version       = "0.8.0"
+	authors       = ["Nikolay Kim <fafhrd91@gmail.com>"]
+	description   = "Actor framework for Rust"
+	readme        = "README.md"
+	keywords      = ["actor", "futures", "actix", "async", "tokio"]
+	homepage      = "https://actix.rs"
+	repository    = "https://github.com/actix/actix.git"
+	documentation = "https://docs.rs/actix/"
+	categories    = ["network-programming", "asynchronous"]
+	license       = "MIT/Apache-2.0"
+	exclude       = [".gitignore", ".travis.yml", ".cargo/config", "appveyor.yml"]
+	edition       = "2018"
+
 
 [badges]
-travis-ci = { repository = "actix/actix", branch = "master" }
-appveyor = { repository = "fafhrd91/actix-n9e64" }
-codecov = { repository = "actix/actix", branch = "master", service = "github" }
+
+	travis-ci = { repository = "actix/actix", branch = "master" }
+	appveyor  = { repository = "fafhrd91/actix-n9e64" }
+	codecov   = { repository = "actix/actix", branch = "master", service = "github" }
+
 
 [lib]
-name = "actix"
-path = "src/lib.rs"
+
+	name = "actix"
+	path = "src/lib.rs"
+
 
 [workspace]
-members = ["examples/chat"]
+
+	members = ["examples/chat"]
+
 
 [features]
-default = ["resolver"]
 
-# dns resolver
-resolver = ["trust-dns-resolver", "tokio-tcp"]
-
-# Adds assertion to prevent processing too many messages on event loop
-mailbox_assert = []
+	# Adds assertion to prevent processing too many messages on event loop
+	mailbox_assert = []
 
 [dependencies]
-actix-rt = "0.2.1"
-actix_derive = "0.4"
-bytes = "0.4"
-crossbeam-channel = "0.3"
-derive_more = "0.14.0"
-futures = "0.1"
-hashbrown = "0.1.8"
-log = "0.4"
-lazy_static = "1.2"
-bitflags = "1.0"
-smallvec = "0.6"
-parking_lot = "0.7"
-tokio-io = "0.1"
-tokio-codec = "0.1"
-tokio-executor = "0.1"
-tokio-tcp = { version = "0.1", optional = true }
-tokio-timer = "0.2.8"
 
-# dns resolver
-trust-dns-resolver = { version = "0.11.0-alpha.2", optional = true, default-features = false }
+	actix-rt          = "0.2.1"
+	actix_derive      = "0.4"
+	bytes             = "0.4"
+	crossbeam-channel = "0.3"
+	derive_more       = "0.14.0"
+	futures           = "0.1"
+	hashbrown         = "0.1.8"
+	log               = "0.4"
+	lazy_static       = "1.2"
+	bitflags          = "1.0"
+	smallvec          = "0.6"
+	parking_lot       = "0.7"
+	tokio-io          = "0.1"
+	tokio-codec       = "0.1"
+	tokio-executor    = "0.1"
+	tokio-tcp         = "0.1"
+	tokio-timer       = "0.2.8"
 
 [profile.release]
-lto = true
-opt-level = 3
-codegen-units = 1
+
+	lto           = true
+	opt-level     = 3
+	codegen-units = 1
