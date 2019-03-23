@@ -69,7 +69,6 @@ mod mailbox;
 pub mod actors;
 pub mod clock;
 pub mod fut;
-pub mod io;
 pub mod registry;
 pub mod sync;
 pub mod utils;
@@ -80,7 +79,6 @@ pub use crate::actor::{
     Actor, ActorContext, ActorState, AsyncContext, Running, SpawnHandle, Supervised,
 };
 pub use crate::address::{Addr, MailboxError, Recipient, WeakAddr};
-// pub use crate::arbiter::{Arbiter, ArbiterBuilder};
 pub use crate::context::Context;
 pub use crate::fut::{ActorFuture, ActorStream, FinishStream, WrapFuture, WrapStream};
 pub use crate::handler::{
@@ -130,7 +128,6 @@ pub mod prelude {
     pub use crate::actors;
     pub use crate::dev;
     pub use crate::fut;
-    pub use crate::io;
     pub use crate::utils::{Condition, IntervalFunc, TimerFunc};
 }
 
